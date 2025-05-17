@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Declaration | Hashtaghub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0f2027;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .display-box {
+      margin-top: 10px;
+      font-size: 18px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .checkbox-group {
+      margin: 20px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1abc9c;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Payment Declaration Form</h2>
+    <form id="declarationForm" action="http://localhost/projectphpfile/payment_dec.php" method="POST" >
+      <label for="clientName">Client Name</label>
+      <input type="text" id="clientName" name="name" required>
+
+      <label for="ClientNo">Client Phone No.</label>
+      <input type="text" id="ClientNo" name="phoneno" required>
+      
+      <label for="planName">Plan Name</label>
+      <div class="display-box" id="planNameBox" name="planname">Loading...</div>
+
+      <label>Total Amount</label>
+      <div class="display-box" id="amountBox" name="totalamount">Loading...</div>
+
+      <label for="paymentMode">Payment Mode</label>
+      <select id="paymentMode" name="paymentmode" required>
+        <option value="">-- Select Mode --</option>
+        <option value="UPI">UPI</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+        <option value="Cash">Cash</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="agreement" required>
+        <label for="agreement">I declare that the above payment details are true and verified.</label>
+      </div>
+
+      <button type="submit">Submit Declaration</button>
+    </form>
+
+    <div class="footer-note">
+      © 2025 Hashtaghub Digital Marketing
+    </div>
+  </div>
+
+  <script>
+    // Load cart data from localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const total = localStorage.getItem('totalAmount');
+      const amountBox = document.getElementById('amountBox');
+      const planNameBox = document.getElementById('planNameBox');
+      
+      // Get cart items to extract plan name
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Display total amount
+      if (total) {
+        amountBox.textContent = `₹${parseFloat(total).toLocaleString()}`;
+      } else {
+        amountBox.textContent = "₹0 (No cart total found)";
+      }
+      
+      // Display plan name(s)
+      if (cart.length > 0) {
+        if (cart.length === 1) {
+          // If only one item, show its name
+          planNameBox.textContent = cart[0].name;
+        } else {
+          // If multiple items, join their names
+          const planNames = cart.map(item => item.name).join(", ");
+          planNameBox.textContent = planNames;
+        }
+      } else {
+        planNameBox.textContent = "No plan selected";
+      }
+    });
+
+    // Handle form submission and redirect based on payment mode
+    document.getElementById('declarationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const paymentMode = document.getElementById('paymentMode').value;
+      const total = localStorage.getItem('totalAmount');
+      
+      // Save selected amount for next page
+      localStorage.setItem('selectedPaymentAmount', total);
+      
+      // Also save plan name for next page
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let planName = "No plan";
+      
+      if (cart.length > 0) {
+        if (cart.length === 1) {
+          planName = cart[0].name;
+        } else {
+          planName = cart.map(item => item.name).join(", ");
+        }
+      }
+      
+      localStorage.setItem('selectedPlanName', planName);
+
+      if (!paymentMode) {
+        alert("Please select a payment mode.");
+        return;
+      }
+
+      alert("Redirecting to your selected payment method...");
+
+      // Redirect logic
+      if (paymentMode === 'UPI') {
+        window.location.href = 'UPI.html';
+      } else if (paymentMode === 'Bank Transfer') {
+        window.location.href = 'Net Banking.html';
+      } else {
+        window.location.href = 'Debitcard.html';
+      }
+    });
+  </script>
+
+</body>
+</html>

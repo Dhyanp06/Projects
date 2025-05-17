@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Plan - HashtagHub</title>
+    <link rel="stylesheet" href="custom-plan.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Build Your Custom Digital Marketing Plan</h2>
+        <form id="customPlanForm">
+            <label>Select Services:</label>
+            <div class="services">
+                <label><input type="checkbox" value="SEO" data-price="1000"> SEO (₹1000)</label>
+                <label><input type="checkbox" value="SMM" data-price="1200"> Social Media Marketing (₹1200)</label>
+                <label><input type="checkbox" value="PPC" data-price="1500"> Pay-Per-Click (PPC) Ads (₹1500)</label>
+                <label><input type="checkbox" value="Content" data-price="800"> Content Marketing (₹800)</label>
+                <label><input type="checkbox" value="Email" data-price="700"> Email Marketing (₹700)</label>
+                <label><input type="checkbox" value="Web" data-price="2000"> Website Development (₹2000)</label>
+            </div>
+
+            <label>Additional Requirements:</label>
+            <textarea id="additional" placeholder="Describe any custom needs..."></textarea>
+
+            <h3>Total Price: <span id="totalPrice">₹0</span></h3>
+
+           
+            <button type="submit">Add To Cart</button>
+
+        </form>
+    </div>
+
+    <script src="custom-plan.js"></script>
+</body>
+</html>

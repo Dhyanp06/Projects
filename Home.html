@@ -1,0 +1,344 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Landing Page
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        overflow-x: hidden;
+    }
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .btn-animate:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+    }
+    .slide-in {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .slide-in.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .zoom-in {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .zoom-in.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .animate-fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .animate-slide-up {
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+
+    .opacity-100 {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    .animate-fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .animate-slide-up {
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+
+    .opacity-100 {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+</style>
+ </head>
+ <body class="bg-gradient-to-r from-blue-900 via-purple-900 to-red-900 text-white">
+  <header class="flex justify-between items-center p-6">
+   <div class="flex items-center space-x-2">
+    
+    <span class="text-xl font-bold" href="Desktop\Video.html">
+     hashtaghub
+    </span>
+   </div>
+   <nav class="space-x-6">
+    <a class="text-white hover:text-gray-300" href="Home.html">
+     Home
+    </a>
+    <a class="text-white hover:text-gray-300" href="About.html">
+     About
+    </a>
+    <a class="text-white hover:text-gray-300" href="SERVICES.html">
+     Services
+    </a>
+    <a class="text-white hover:text-gray-300" href="Portfolio.html">
+    Portfolio
+    </a>
+
+    <a class="text-white hover:text-gray-300" href="plans.html">
+     Plans
+    </a>
+
+    <a class="text-white hover:text-gray-300" href="contact_us.html">
+        Contact
+       </a>
+
+       <a class="text-white hover:text-gray-300" href="testimonial.html">
+        Testimonial
+       </a>
+
+       <a class="text-white hover:text-gray-300" href="career.html">
+        Career
+       </a>
+
+       <a class="text-white hover:text-gray-300" href="addtocart.html">
+        Cart
+       </a>
+       <a class="text-white hover:text-gray-300" href="FAQs_final.html">
+        FAQs
+       </a>
+       <a class="text-white hover:text-gray-300" href="Profile Page.html">
+        Profile
+       </a>
+      
+       <a id="loginButton" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black" href="Login and Sign Up.html">
+        Sign in
+    </a>
+    
+
+  
+   </nav>
+  </header>
+  <main class="flex flex-col items-start justify-center h-screen px-6 md:px-20 lg:px-40 fade-in">
+   <h1 class="text-5xl md:text-6xl font-bold mb-4 zoom-in">
+    Welcome Our New Era OF Digital World.
+   </h1>
+   <h2 class="text-2xl md:text-3xl mb-6 slide-in">
+    Creative Design
+   </h2>
+   <p class="text-lg md:text-xl mb-8 max-w-lg fade-in">
+    Empower Your Brand with Cutting-Edge Digital Marketing Drive Growth, Engage Audiences, and Dominate Your Industry!
+   </p>
+   <div class="space-x-4">
+    <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded btn-animate"onclick="window.location.href='SERVICES.html'">
+     Get Started
+    </button>
+    <button class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded btn-animate" onclick="window.location.href='contact_us.html'">
+     Contact us
+    </button>
+   </div>
+  </main>
+
+  <section class="py-16 bg-gradient-to-r from-pink-500 to-orange-500 text-center">
+    <h2 class="text-3xl font-bold mb-8">
+     Our Services
+    </h2>
+    <div class="flex flex-wrap justify-center">
+     <div class="w-full md:w-1/3 p-4">
+      <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+       <img alt="Service 1" class="w-full h-48 object-cover rounded-lg mb-4" height="200" src="https://img.freepik.com/free-photo/web-design-technology-browsing-programming-concept_53876-163260.jpg?semt=ais_hybrid" width="300"/>
+       <h3 class="text-xl font-bold mb-2">
+        Web Design
+       </h3>
+       <p>
+        Professional and responsive website design with an intuitive user experience, modern layouts, and mobile-friendly functionality.
+       </p>
+      </div>
+     </div>
+     <div class="w-full md:w-1/3 p-4">
+      <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+       <img alt="Service 2" class="w-full h-48 object-cover rounded-lg mb-4" height="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSReeJGMG181kXhZE15ppDMSRFSEewtCXFHkA&s" width="300"/>
+       <h3 class="text-xl font-bold mb-2">
+        Social Media Marketing
+       </h3>
+       <p>
+        Strategic social media management, content creation, and targeted advertising on platforms like Facebook, Instagram, LinkedIn, and Twitter.
+       </p>
+      </div>
+     </div>
+     <div class="w-full md:w-1/3 p-4">
+      <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+       <img alt="Service 3" class="w-full h-48 object-cover rounded-lg mb-4" height="200" src="https://marktech-images.mstock.com/MACM-CMS/Assets/what_is_gst_8530d3f7e0.webp" width="300"/>
+       <h3 class="text-xl font-bold mb-2">
+        GST Registration
+       </h3>
+       <p>
+        Hassle-free GST registration services to ensure compliance and smooth tax processing for businesses.Let me know if you need modifications or more details! 🚀
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section class="py-16 bg-black text-center animate-fade-in">
+    <h2 class="text-3xl font-bold mb-8 opacity-0 animate-slide-up">
+        Welcome to HASHTAG HUB, your one-stop destination for innovative digital marketing solutions and brand transformation. 
+        We specialize in data-driven marketing strategies, helping businesses enhance their online presence, drive engagement, and maximize conversions.
+
+        At HASHTAG HUB, we blend creativity, technology, and market insights to craft powerful digital experiences. Whether you are a startup looking to establish your brand or an enterprise seeking to scale your digital footprint, we have the expertise to turn your vision into reality.
+    </h2>
+    <button class="px-6 py-2 bg-pink-500 text-white rounded-full transform transition duration-300 hover:scale-110 shadow-lg"
+        onclick="window.location.href='contact_us.html'">
+        Contact Us
+    </button>
+    <section class="video-section">
+        <h2>Experience the Future of Digital Marketing</h2>
+        <video controls autoplay loop>
+            <source src="C:\Users\patel\Downloads\Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+</section>
+
+<!-- Portfolio Section -->
+<section class="py-16 bg-gradient-to-r from-pink-500 to-orange-500 text-center animate-fade-in">
+    <h2 class="text-3xl font-bold mb-8 opacity-0 animate-slide-up">
+        Our Portfolio
+    </h2>
+    <div class="flex flex-wrap justify-center">
+        <div class="w-full md:w-1/3 p-4">
+            <div class="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                <img alt="Portfolio 1"
+                    class="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-110"
+                    src="https://storage.googleapis.com/a1aa/image/4LtM4GqcqJRa3aKnEFy6OPeKW8qVN6xW7DT_I14lSQw.jpg" />
+                <h3 class="text-xl font-bold mb-2">
+                    Project 1
+                </h3>
+                <p>
+                    E-Commerce Growth Strategy for a Fashion Brand
+                </p>
+            </div>
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+            <div class="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                <img alt="Portfolio 2"
+                    class="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-110"
+                    src="https://storage.googleapis.com/a1aa/image/1VLPJVvsVkdFgnME0wpr-Cr2cPlwMsLnB88qb_LIRqE.jpg" />
+                <h3 class="text-xl font-bold mb-2">
+                    Project 2
+                </h3>
+                <p>
+                    Local SEO & Google Ads for a Restaurant Chain
+                </p>
+            </div>
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+            <div class="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                <img alt="Portfolio 3"
+                    class="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-110"
+                    src="https://storage.googleapis.com/a1aa/image/OI0x3Z0N9gShAYCdw527-cMwuM6falE3u5zursYIfzo.jpg" />
+                <h3 class="text-xl font-bold mb-2">
+                    Project 3
+                </h3>
+                <p>
+                    Lead Generation Campaign for an EdTech Startup
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-gradient-to-r from-blue-900 via-purple-900 to-red-900 text-center animate-fade-in">
+    <h2 class="text-3xl font-bold mb-8 opacity-0 animate-slide-up">
+        Contact Us
+    </h2>
+    <p class="mb-6 text-lg opacity-0 animate-slide-up">
+        Have questions? Reach out to us and we will get back to you soon.
+    </p>
+    <div class="max-w-3xl mx-auto bg-white text-black p-8 rounded-lg shadow-lg opacity-0 animate-slide-up">
+        <form>
+            <div class="mb-4 opacity-0 animate-slide-up">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                <input class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-700 transition-shadow duration-300" id="name" placeholder="Your Name" type="text" />
+            </div>
+            <div class="mb-4 opacity-0 animate-slide-up">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                <input class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-700 transition-shadow duration-300" id="email" placeholder="Your Email" type="email" />
+            </div>
+            <div class="mb-4 opacity-0 animate-slide-up">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                <textarea class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-700 transition-shadow duration-300" id="message" placeholder="Your Message" rows="4"></textarea>
+            </div>
+            <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded shadow-lg transform transition duration-300 hover:scale-105" type="submit">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+
+
+<!-- Footer Section -->
+<footer class="py-8 bg-black text-center">
+    <p class="text-white">
+        © 2023 Digital Agency. All rights reserved.
+    </p>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.1 });
+        elements.forEach(el => observer.observe(el));
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".animate-fade-in, .animate-slide-up");
+
+        function checkScroll() {
+            fadeElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9) {
+                    el.classList.add("opacity-100");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".animate-fade-in, .animate-slide-up");
+
+        function checkScroll() {
+            fadeElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9) {
+                    el.classList.add("opacity-100");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+    });
+</script>
+</body>
+</html>

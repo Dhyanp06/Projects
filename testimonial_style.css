@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: contents;
+   
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box{
+    display: flex ;
+    padding-left: 20%;
+    padding-top: 10%;
+}
+
+ .testimonial-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial {
+    display: none;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+ 
+/* Header styling */
+header { background-color: #0838d8; 
+    color: #fff; padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px; } 
+    
+    header .container { display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+width: 90%;
+ margin: 0 auto; } 
+ 
+ header h1 { font-size: 2rem;
+color: #f4f4f4;
+padding-left: 50px;
+padding-top: 20px;
+} 
+ 
+ nav ul {
+    list-style: none; } 
+    
+    nav ul li { display: inline-block; 
+        margin-left: 20px; } 
+        
+        nav ul li a { color: #fff; 
+            text-decoration: none; } 
+            
+            /* Main content styling */

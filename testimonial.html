@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial Page</title>
+    <link rel="stylesheet" href="testimonial_style.css" />
+  </head>
+
+  <header>
+    <div class="container">
+      <h1>Testimonials</h1>
+      <nav>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <body>
+    <div class="box">
+      <div class="testimonial-container">
+        <h1>What Our Clients Say</h1>
+        <div class="testimonial-carousel">
+          <div class="testimonial" id="testimonial1">
+            <p class="testimonial-text">
+              "This service is fantastic! I couldn’t have asked for a better
+              experience."
+            </p>
+            <p class="testimonial-author">- John Doe</p>
+          </div>
+          <div class="testimonial" id="testimonial2">
+            <p class="testimonial-text">
+              "A great team that always delivers top-notch quality. Highly
+              recommended!"
+            </p>
+            <p class="testimonial-author">- Jane Smith</p>
+          </div>
+          <div class="testimonial" id="testimonial3">
+            <p class="testimonial-text">
+              "Excellent customer support. My issue was solved quickly and
+              efficiently."
+            </p>
+            <p class="testimonial-author">- Mike Johnson</p>
+          </div>
+        </div>
+        <button class="prev" onclick="changeTestimonial(-1)">&#10094;</button>
+        <button class="next" onclick="changeTestimonial(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <script src="testimonial_script.js"></script>
+  </body>
+</html>

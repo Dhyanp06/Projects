@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Net Banking Payment | Hashtaghub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #283c86, #45a247);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .bank-container {
+      max-width: 550px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #283c86;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 12px 0 6px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .amount-box {
+      margin-top: 10px;
+      font-size: 18px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #45a247;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3d8f3f;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bank-container">
+    <h2>Net Banking Payment Form</h2>
+    
+    <form id="bankingForm">
+      <label for="accountName">Account Holder Name</label>
+      <input type="text" id="accountName" required>
+
+      <label for="bankName">Bank Name</label>
+      <input type="text" id="bankName" required>
+
+      <label for="accountNumber">Account Number</label>
+      <input type="text" id="accountNumber" required>
+
+      <label for="ifsc">IFSC Code</label>
+      <input type="text" id="ifsc" required>
+
+      <label>Amount to Pay</label>
+      <div class="amount-box" id="bankAmount">Loading...</div>
+
+      <button type="submit">Confirm Payment</button>
+    </form>
+
+    <div class="footer-note">
+      © 2025 Hashtaghub Digital Marketing
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const amount = localStorage.getItem('selectedPaymentAmount');
+      const amountBox = document.getElementById('bankAmount');
+
+      if (amount) {
+        amountBox.textContent = `₹${parseFloat(amount).toLocaleString()}`;
+      } else {
+        amountBox.textContent = "₹0 (No amount found)";
+      }
+
+      document.getElementById("bankingForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Net Banking Payment Confirmed. Thank you!");
+        window.location.href = "thankyou.html";
+      });
+    });
+  </script>
+
+</body>
+</html>

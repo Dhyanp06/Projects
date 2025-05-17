@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="addtocart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Cart</h1>
+        
+        <div class="cart-container">
+            <div class="cart-items" id="cart-items">
+               
+            </div>
+            
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0</span>
+                </div>
+                <div class="summary-item">
+                    <span>GST (18%):</span>
+                    <span id="tax">₹0</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="total">₹0</span>
+                </div>
+                <button id="checkout-btn" class="checkout-btn" onclick="window.location.href='Payment.html'">Proceed to Checkout</button>
+
+                
+                <button id="continue-shopping" class="continue-btn" >Continue Shopping</button>
+            </div>
+        </div>
+        
+        <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+            <h2>Your cart is empty</h2>
+            <p>Looks like you haven't added any plans to your cart yet.</p>
+            <button id="browse-plans" class="continue-btn">Browse Plans</button>
+        </div>
+    </div>
+    
+    <script src="addtocart.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UPI Payment | Hashtaghub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .upi-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      color: #333;
+    }
+
+    .upi-container h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .upi-logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .upi-logo img {
+      width: 100px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e8449;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upi-container">
+    <h2>UPI Payment Form</h2>
+    
+    <div class="upi-logo">
+      <img src="https://img.republicworld.com/all_images/upi-1745933988070-16_9.webp" alt="UPI Logo">
+    </div>
+
+    <form id="upiForm">
+      <label for="payerName">Payer's Name</label>
+      <input type="text" id="payerName" required>
+
+      <label for="upiId">UPI ID</label>
+      <input type="text" id="upiId" placeholder="example@bank" required>
+
+      
+      <label for="refNo">Payment Reference Number</label>
+      <input type="text" id="refNo" required>
+      <label>Amount to Pay</label>
+      <div class="amount-box" id="upiAmount">Loading...</div>
+      <button type="submit">Confirm Payment</button>
+    </form>
+
+    <div class="footer-note">
+      © 2025 Hashtaghub Digital Marketing
+    </div>
+  </div>
+
+  <script>
+    
+      document.addEventListener('DOMContentLoaded', () => {
+        const upiAmount = localStorage.getItem('selectedPaymentAmount');
+        const amountBox = document.getElementById('upiAmount');
+    
+        if (upiAmount) {
+          amountBox.textContent = `₹${parseFloat(upiAmount).toLocaleString()}`;
+        } else {
+          amountBox.textContent = "₹0 (No amount found)";
+        }
+    
+        document.getElementById("upiForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+          alert("Confirm the payment");
+          window.location.href = "thankyou.html";
+        });
+      });
+    </script>
+    
+  
+
+</body>
+</html>

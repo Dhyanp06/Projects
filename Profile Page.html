@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background-color: #f4f7fc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .profile-container {
+      background: #fff;
+      width: 500px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .profile-header {
+      margin-bottom: 20px;
+    }
+    .profile-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .profile-header h2 {
+      margin-top: 10px;
+      font-size: 22px;
+      color: #4a90e2;
+    }
+    .profile-header p {
+      color: #7f8c8d;
+    }
+    .profile-info {
+      margin: 20px 0;
+      text-align: left;
+    }
+    .profile-info label {
+      font-size: 14px;
+      color: #2c3e50;
+    }
+    .profile-info span {
+      display: block;
+      font-size: 16px;
+      color: #34495e;
+      margin-top: 5px;
+    }
+    .profile-actions {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 15px;
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #357ab7;
+    }
+    .edit-btn {
+      background-color: #e67e22;
+    }
+    .edit-btn:hover {
+      background-color: #d35400;
+    }
+    .input-field {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    /* Progress Bar Styles */
+    .progress-section {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .progress-bar-container {
+      margin-bottom: 10px;
+    }
+    .progress-label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #ecf0f1;
+    }
+    .progress {
+      height: 100%;
+      border-radius: 5px;
+      background-color: #4a90e2;
+    }
+    /* Calendar Section */
+    .calendar-section {
+      margin-top: 30px;
+      text-align: left;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+    .calendar div {
+      padding: 15px;
+      background: #ecf0f1;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .calendar div.today {
+      background: #3498db;
+      color: white;
+    }
+   
+    .notification {
+      padding: 10px;
+      background-color: #f39c12;
+      color: #fff;
+      margin-top: 20px;
+      border-radius: 5px;
+      display: none;
+    }
+    /* Analytics Dashboard Styles */
+    .analytics-section {
+        margin-top: 30px;
+        text-align: left;
+      }
+      .analytics-card {
+        display: flex;
+        justify-content: space-between;
+        background: #ecf0f1;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      .analytics-card div {
+        display: flex;
+        flex-direction: column;
+      }
+      .analytics-card div span {
+        font-size: 16px;
+        color: #34495e;
+      }
+      .analytics-card div p {
+        font-size: 18px;
+        color: #2c3e50;
+        font-weight: bold;
+      }
+      /* Pending Tasks Section */
+      .pending-tasks-section {
+        margin-top: 30px;
+        text-align: left;
+      }
+      .task {
+        background: #ecf0f1;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+      .task h4 {
+        margin-bottom: 10px;
+        color: #2c3e50;
+      }
+      .task p {
+        font-size: 14px;
+        color: #7f8c8d;
+      }
+      .task .due-date {
+        font-weight: bold;
+        color: #e74c3c;
+      }
+      /* Marketing Recommendations Section */
+      .recommendations-section {
+        margin-top: 30px;
+        text-align: left;
+      }
+      .recommendation {
+        background: #f9e3d5;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+      .recommendation h4 {
+        margin-bottom: 10px;
+        color: #2c3e50;
+      }
+      .recommendation p {
+        font-size: 14px;
+        color: #7f8c8d;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="profile-header">
+      <img id="profilePic" src="https://cdn-icons-png.flaticon.com/512/7915/7915522.png" alt="Profile Picture">
+      <h2 id="userName">Dhyan Patel</h2>
+      <p id="userEmail">Dhyan@example.com</p>
+    </div>
+
+    <div class="profile-info">
+      <label for="businessName">Business Name:</label>
+      <span id="businessName">Fashion Marketing</span>
+    </div>
+
+    <div class="profile-info">
+      <label for="subscriptionPlan">Subscription Plan:</label>
+      <span id="subscriptionPlan">Premium</span>
+    </div>
+
+    <div class="profile-info">
+      <label for="planRenewal">Plan Renewal:</label>
+      <span id="planRenewal">June 1, 2025</span>
+    </div>
+
+    <div class="profile-info">
+      <label for="serviceStatus">Service Status:</label>
+      <span id="serviceStatus">Active</span>
+    </div>
+
+    <!-- Marketing Progress Section -->
+    <div class="progress-section">
+      <h3>Marketing Progress</h3>
+
+      <div class="progress-bar-container">
+        <label class="progress-label">Lead Generation</label>
+        <div class="progress-bar">
+          <div id="leadGenerationProgress" class="progress" style="width: 60%;"></div>
+        </div>
+      </div>
+
+      <div class="progress-bar-container">
+        <label class="progress-label">Website Traffic</label>
+        <div class="progress-bar">
+          <div id="websiteTrafficProgress" class="progress" style="width: 80%;"></div>
+        </div>
+      </div>
+
+      <div class="progress-bar-container">
+        <label class="progress-label">Social Media Engagement</label>
+        <div class="progress-bar">
+          <div id="socialMediaProgress" class="progress" style="width: 45%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar Section -->
+    <div class="calendar-section">
+      <h3>Marketing Calendar</h3>
+      <div class="calendar">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div class="today">6</div><div>7</div>
+        <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+        <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+        <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+      </div>
+    </div>
+
+    
+
+    <!-- Notification Section -->
+    <div id="notification" class="notification">
+      Campaign milestone achieved!
+    </div>
+
+    <div class="profile-actions">
+      <button class="btn edit-btn" onclick="toggleEdit()">Edit</button>
+      <button class="btn" onclick="saveProfile()">Save</button>
+    </div>
+  </div>
+
+  
+
+  <script>
+    let isEditing = false;
+
+    function toggleEdit() {
+      isEditing = !isEditing;
+
+      if (isEditing) {
+        document.getElementById('userName').contentEditable = true;
+        document.getElementById('userEmail').contentEditable = true;
+        document.getElementById('businessName').innerHTML = `<input type="text" class="input-field" value="Fashion Marketing">`;
+        document.getElementById('subscriptionPlan').innerHTML = `<input type="text" class="input-field" value="Premium">`;
+        document.getElementById('planRenewal').innerHTML = `<input type="text" class="input-field" value="June 1, 2025">`;
+        document.getElementById('serviceStatus').innerHTML = `<input type="text" class="input-field" value="Active">`;
+      } else {
+        document.getElementById('userName').contentEditable = false;
+        document.getElementById('userEmail').contentEditable = false;
+        document.getElementById('businessName').innerHTML = 'Fashion Marketing';
+        document.getElementById('subscriptionPlan').innerHTML = 'Premium';
+        document.getElementById('planRenewal').innerHTML = 'June 1, 2025';
+        document.getElementById('serviceStatus').innerHTML = 'Active';
+      }
+    }
+
+    function saveProfile() {
+      // Logic to save profile changes
+      alert('Profile saved!');
+    }
+
+    // Simulate push notification
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.innerHTML = message;
+      notification.style.display = 'block';
+
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 3000);
+    }
+
+    // Example: Show notification when a campaign milestone is achieved
+    setTimeout(() => {
+      showNotification('Campaign milestone achieved!');
+    }, 5000);
+  </script>
+</body>
+</html>
